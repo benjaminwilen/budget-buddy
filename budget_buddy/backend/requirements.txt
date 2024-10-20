@@ -1,0 +1,4 @@
+fastapi==0.95.1
+uvicorn==0.22.0
+duckdb==0.9.1 
+pandas==2.1.1
