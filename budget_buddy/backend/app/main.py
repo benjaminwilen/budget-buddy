@@ -6,9 +6,6 @@ import duckdb
 from pydantic import BaseModel
 
 
-DATABASE_FILE = "app/data/budget_buddy.db"
-
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     conn = duckdb.connect(DATABASE_FILE)
@@ -32,14 +29,6 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
-
-
-def get_db():
-    conn = duckdb.connect(DATABASE_FILE)
-    try:
-        yield conn
-    finally:
-        conn.close()
 
 
 class Transaction(BaseModel):

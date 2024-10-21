@@ -1,5 +1,7 @@
 from unittest.mock import MagicMock, patch
 from fastapi.testclient import TestClient
+
+# pylint: disable=unused-import
 from app import app, get_db
 
 client = TestClient(app)
