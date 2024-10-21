@@ -1,6 +1,6 @@
 FROM node:18 AS build
 
-WORKDIR /Users/benjaminwilen/budget-buddy/budget_buddy/frontend
+WORKDIR /app
 
 COPY package.json .
 RUN npm install
@@ -9,7 +9,7 @@ COPY . .
 RUN npm run build
 
 FROM node:18 AS production
-WORKDIR /Users/benjaminwilen/budget-buddy/budget_buddy/frontend
+WORKDIR /app
 COPY --from=build ./build ./build
 
 RUN npm install -g serve
