@@ -1,6 +1,8 @@
 import duckdb
 
-DATABASE_FILE = "app/data/budget_buddy.db"
+DATABASE_FILE = (
+    "~/Users/benjaminwilen/budget-buddy/budget_buddy/backend/app/data/budget_buddy.db"
+)
 
 
 def get_db():
